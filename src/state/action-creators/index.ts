@@ -4,8 +4,10 @@ import {
     UpdateCellAction,
     DeleteCellAction,
     MoveCellAction,
-    InsertCellBeforeAction
+    InsertCellBeforeAction,
+    Direction
 } from '../actions';
+import { CellTypes } from '../cell';
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
     return {
@@ -17,8 +19,29 @@ export const updateCell = (id: string, content: string): UpdateCellAction => {
     }
 };
 
-export const deleteCell = (): DeleteCellAction => { };
+export const deleteCell = (id: string): DeleteCellAction => {
+    return {
+        type: ActionType.DELETE_CELL,
+        payload: id,
+    }
+};
 
-export const moveCell = (): MoveCellAction => { };
+export const moveCell = (id: string, direction: Direction): MoveCellAction => {
+    return {
+        type: ActionType.MOVE_CELL,
+        payload: {
+            id,
+            direction,
+        }
+    }
+};
 
-export const insertCellBefore = (): InsertCellBeforeAction => { };
+export const insertCellBefore = (id: string, cellType: CellTypes): InsertCellBeforeAction => {
+    return {
+        type: ActionType.INSERT_CELL_BEFORE,
+        payload: {
+            id,
+            type: cellType,
+        }
+    }
+};
