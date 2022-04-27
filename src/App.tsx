@@ -1,4 +1,3 @@
-import 'bulmaswatch/superhero/bulmaswatch.min.css';
 // import CodeCell from "./components/code-cell";
 import { Provider } from 'react-redux';
 import { store } from './state';
