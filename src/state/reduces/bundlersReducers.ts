@@ -1,4 +1,3 @@
-import { code } from "@uiw/react-md-editor/lib/cjs/commands";
 import produce from "immer";
 import { ActionType } from "../action-types";
 import { Action } from '../actions';
