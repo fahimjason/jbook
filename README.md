@@ -20,5 +20,5 @@ cd jbook
 
 ```bash
 $ lerna add          # install dependencies
-$ npm start            # development build
+$ npm start          # development build
 ```
