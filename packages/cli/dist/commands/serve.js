@@ -12,6 +12,18 @@ exports.serveCommand = new commander_1.Command()
     .description('Open a file for editing')
     .option('-p, --port <number>', 'port to run server on', '4005')
     .action((filename = 'notebook.js', options) => {
-    const dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
-    (0, local_api_1.serve)(parseInt(options.port), path_1.default.basename(filename), dir);
+    try {
+        const dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
+        (0, local_api_1.serve)(parseInt(options.port), path_1.default.basename(filename), dir);
+        console.log(`Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file.`);
+    }
+    catch (err) {
+        if (err.code === 'EADDRINUSE') {
+            console.error('Port is in use. Try running on a different port.');
+        }
+        else {
+            console.log('Heres the problem', err.message);
+        }
+        process.exit(1);
+    }
 });
