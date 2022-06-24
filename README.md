@@ -15,12 +15,13 @@
 ```bash
 $ git clone https://github.com/fahimjason/jbook.git
 $ cd jbook
+$ npm install          # install dependencies
 ```
 
 ## NPM Scripts
 
 ```bash
-$ npm install          # install dependencies
+# Follow the commands
 
 $ cd cli               # move to cli folder
 $ npm install          # install dependencies
