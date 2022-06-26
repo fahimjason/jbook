@@ -23,17 +23,18 @@ $ npm install          # install dependencies
 ```bash
 # Follow the commands
 
-$ cd cli               # move to cli folder
+$ cd packages/cli      # move to cli folder
 $ npm install          # install dependencies
+$ cd ..                # back to packages
 
-# move to the root folder and run these commands
-$ cd local-api         # move to cli folder
+$ cd local-api         # move to local-api folder
 $ npm install          # install dependencies
+$ cd ..                # back to packages
 
-# move to the root folder and run these commands
-$ cd local-client      # move to cli folder
+$ cd local-client      # move to local-client
 $ npm install          # install dependencies
+$ cd ..                # back to packages
 
-# move to the root folder and run
+$ cd ..                # back to  the root folder
 $ npm start            # development build
 ```
